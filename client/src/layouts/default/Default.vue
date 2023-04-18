@@ -7,7 +7,7 @@
           :rules="rules"
           label="Логін"
         ></v-text-field>
-        <v-btn type="submit" block class="mt-2">Відправити</v-btn>
+        <v-btn type="submit" block class="mt-2" v-on:click="submit">Відправити</v-btn>
       </v-form>
     </v-sheet>
   </v-app>
@@ -24,6 +24,11 @@
             return 'Введіть ваш логін'
           },
         ],
+      }
+    },
+    methods: {
+      submit() {
+        this.$router.push({ path: '/home' })
       }
     }
   }
